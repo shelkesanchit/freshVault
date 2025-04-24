@@ -1,0 +1,46 @@
+name: expiry_tracker
+description: A Flutter application for tracking expiry dates of products.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  provider: ^6.0.5
+  shared_preferences: ^2.1.1
+  uuid: ^3.0.7
+  path_provider: ^2.0.15
+  image_picker: ^0.8.7+5
+  intl: ^0.19.0
+  flutter_local_notifications: ^14.1.1
+  timezone: ^0.9.2
+  table_calendar: ^3.0.9
+  flutter_staggered_grid_view: ^0.6.2
+  url_launcher: ^6.1.11
+  share_plus: ^7.0.2
+  # fl_chart: ^0.55.2  # Removed to avoid compatibility issues
+  excel: ^2.1.0
+  pdf: ^3.10.1
+  file_picker: ^5.3.2
+  path: ^1.8.3
+  flutter_svg: ^2.0.5
+  google_fonts: ^4.0.4
+  http: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
