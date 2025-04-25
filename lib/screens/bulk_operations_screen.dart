@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
@@ -504,7 +506,7 @@ class _BulkOperationsScreenState extends State<BulkOperationsScreen> {
                                       ],
                                     ),
                                     const SizedBox(height: 4),
-                                    if (category != null)
+                                    // if (category != null)
                                       Row(
                                         children: [
                                           Icon(

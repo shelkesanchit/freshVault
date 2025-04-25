@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +36,7 @@ void main() async {
   
   // Initialize user information with the latest timestamp
   final currentDateTime = DateTime.parse('2025-04-18 03:14:35');
-  final currentUserLogin = 'shelkesanchit632003';
+  const currentUserLogin = 'shelkesanchit632003';
   
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

@@ -29,7 +29,7 @@ dependencies:
   # fl_chart: ^0.55.2  # Removed to avoid compatibility issues
   excel: ^2.1.0
   pdf: ^3.10.1
-  file_picker: ^5.3.2
+  # file_picker: ^5.3.2
   path: ^1.8.3
   flutter_svg: ^2.0.5
   google_fonts: ^4.0.4

@@ -1,9 +1,11 @@
+// ignore_for_file: use_build_context_synchronously, avoid_single_cascade_in_expression_statements
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:file_picker/file_picker.dart';
+// import 'package:file_picker/file_picker.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:excel/excel.dart';
 import 'package:pdf/pdf.dart';
@@ -280,47 +282,47 @@ class DataManagementScreen extends StatelessWidget {
   }
   
   Future<void> _restoreData(BuildContext context) async {
-    final itemProvider = Provider.of<ItemProvider>(context, listen: false);
-    final categoryProvider = Provider.of<CategoryProvider>(context, listen: false);
-    final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
-    final translate = languageProvider.getTranslatedValue;
+    // final itemProvider = Provider.of<ItemProvider>(context, listen: false);
+    // final categoryProvider = Provider.of<CategoryProvider>(context, listen: false);
+    // final languageProvider = Provider.of<LanguageProvider>(context, listen: false);
+    // final translate = languageProvider.getTranslatedValue;
     
-    try {
-      final result = await FilePicker.platform.pickFiles(
-        type: FileType.custom,
-        allowedExtensions: ['json'],
-      );
+    // try {
+    //   final result = await FilePicker.platform.pickFiles(
+    //     type: FileType.custom,
+    //     allowedExtensions: ['json'],
+    //   );
       
-      if (result != null && result.files.isNotEmpty) {
-        final file = File(result.files.first.path!);
-        final jsonString = await file.readAsString();
-        final backupData = json.decode(jsonString) as Map<String, dynamic>;
+    //   if (result != null && result.files.isNotEmpty) {
+    //     final file = File(result.files.first.path!);
+    //     final jsonString = await file.readAsString();
+    //     final backupData = json.decode(jsonString) as Map<String, dynamic>;
         
-        // Restore categories first
-        final categoriesData = backupData['categories'] as List<dynamic>;
-        final categories = categoriesData.map((data) => Category.fromJson(data)).toList();
-        await categoryProvider.setCategories(categories);
+    //     // Restore categories first
+    //     final categoriesData = backupData['categories'] as List<dynamic>;
+    //     final categories = categoriesData.map((data) => Category.fromJson(data)).toList();
+    //     await categoryProvider.setCategories(categories);
         
-        // Then restore items
-        final itemsData = backupData['items'] as List<dynamic>;
-        final items = itemsData.map((data) => Item.fromJson(data)).toList();
-        await itemProvider.setItems(items);
+    //     // Then restore items
+    //     final itemsData = backupData['items'] as List<dynamic>;
+    //     final items = itemsData.map((data) => Item.fromJson(data)).toList();
+    //     await itemProvider.setItems(items);
         
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(translate('Data restored successfully')),
-            backgroundColor: Colors.green,
-          ),
-        );
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('${translate('Error restoring data')}: $e'),
-          backgroundColor: Colors.red,
-        ),
-      );
-    }
+    //     ScaffoldMessenger.of(context).showSnackBar(
+    //       SnackBar(
+    //         content: Text(translate('Data restored successfully')),
+    //         backgroundColor: Colors.green,
+    //       ),
+    //     );
+    //   }
+    // } catch (e) {
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     SnackBar(
+    //       content: Text('${translate('Error restoring data')}: $e'),
+    //       backgroundColor: Colors.red,
+    //     ),
+    //   );
+    // }
   }
   
   Future<void> _exportToExcel(BuildContext context) async {

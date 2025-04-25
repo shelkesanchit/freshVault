@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -355,6 +357,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             arguments: {'initialExpiryDate': _selectedDay ?? DateTime.now()},
           );
         },
+        
         child: const Icon(Icons.add),
         tooltip: translate('Add Item'),
       ),

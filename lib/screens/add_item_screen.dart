@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_final_fields
+
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 import 'package:intl/intl.dart';
@@ -9,7 +11,7 @@ import '../models/item.dart';
 import '../providers/item_provider.dart';
 import '../providers/category_provider.dart';
 import '../providers/language_provider.dart';
-import '../models/category.dart';
+// import '../models/category.dart';
 
 class AddItemScreen extends StatefulWidget {
   static const routeName = '/add-item';
@@ -102,58 +104,58 @@ class _AddItemScreenState extends State<AddItemScreen> {
     }
   }
   
-  Future<void> _takePicture() async {
-    setState(() {
-      _isImageLoading = true;
-    });
+   Future<void> _takePicture() async {
+  //   setState(() {
+  //     _isImageLoading = true;
+  //   });
     
-    try {
-      final ImagePicker picker = ImagePicker();
-      final XFile? image = await picker.pickImage(
-        source: ImageSource.camera,
-        imageQuality: 80,
-        maxWidth: 800,
-      );
+  //   try {
+  //     final ImagePicker picker = ImagePicker();
+  //     final XFile? image = await picker.pickImage(
+  //       source: ImageSource.camera,
+  //       imageQuality: 80,
+  //       maxWidth: 800,
+  //     );
       
-      if (image != null) {
-        setState(() {
-          _imageFile = File(image.path);
-        });
-      }
-    } catch (e) {
-      // Handle camera error
-    } finally {
-      setState(() {
-        _isImageLoading = false;
-      });
-    }
-  }
+  //     if (image != null) {
+  //       setState(() {
+  //         _imageFile = File(image.path);
+  //       });
+  //     }
+  //   } catch (e) {
+  //     // Handle camera error
+  //   } finally {
+  //     setState(() {
+  //       _isImageLoading = false;
+  //     });
+  //   }
+   }
   
   Future<void> _pickImage() async {
-    setState(() {
-      _isImageLoading = true;
-    });
+    // setState(() {
+    //   _isImageLoading = true;
+    // });
     
-    try {
-      final ImagePicker picker = ImagePicker();
-      final XFile? image = await picker.pickImage(
-        source: ImageSource.gallery,
-        imageQuality: 80,
-        maxWidth: 800,
-      );
+    // try {
+    //   final ImagePicker picker = ImagePicker();
+    //   final XFile? image = await picker.pickImage(
+    //     source: ImageSource.gallery,
+    //     imageQuality: 80,
+    //     maxWidth: 800,
+    //   );
       
-      if (image != null) {
-        setState(() {
-          _imageFile = File(image.path);
-        });
-      }
-    } catch (e) {
-      // Handle gallery error
-    } finally {
-      setState(() {
-        _isImageLoading = false;
-      });
-    }
+    //   if (image != null) {
+    //     setState(() {
+    //       _imageFile = File(image.path);
+    //     });
+    //   }
+    // } catch (e) {
+    //   // Handle gallery error
+    // } finally {
+    //   setState(() {
+    //     _isImageLoading = false;
+    //   });
+    // }
   }
   
   Future<void> _saveItem() async {
